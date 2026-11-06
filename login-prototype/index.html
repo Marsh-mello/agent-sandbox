@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>登录工作台 · 合文铸字所</title>
+<meta name="description" content="合文铸字所客户工作台登录页原型：左侧为字样样张，右侧为登录表单。静态原型，不连接真实后端。">
+<meta name="color-scheme" content="light">
+<meta name="theme-color" content="#e7e2d5">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect x='1' y='1' width='30' height='30' fill='%23efebe1' stroke='%23b23a2b' stroke-width='2'/%3E%3Ctext x='16' y='22' font-family='serif' font-size='16' text-anchor='middle' fill='%23b23a2b'%3E合%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<main class="stage">
+
+  <section class="specimen" aria-labelledby="foundry-name">
+    <header class="specimen__head">
+      <div class="seal" aria-hidden="true"><span>合</span><span>文</span></div>
+      <div class="brand">
+        <p class="brand__name" id="foundry-name">合文铸字所</p>
+        <p class="brand__latin">Hewen Type Foundry</p>
+      </div>
+    </header>
+
+    <div class="specimen__body">
+      <div class="plate">
+        <figure class="sheet">
+          <div class="sheet__frame">
+            <svg class="sheet__grid" viewBox="0 0 100 100" aria-hidden="true" focusable="false">
+              <path d="M50 0V100M0 50H100M0 0L100 100M100 0L0 100"/>
+            </svg>
+            <span class="sheet__glyph" aria-hidden="true">永</span>
+          </div>
+          <figcaption class="sheet__caption">
+            <span class="sheet__caption-main">永字八法</span>
+            <span class="sheet__caption-meta">合文宋 常规 · 样张</span>
+          </figcaption>
+        </figure>
+
+        <aside class="proof" aria-label="校对意见">
+          <svg class="proof__arrow" viewBox="0 0 84 56" aria-hidden="true" focusable="false">
+            <path d="M82 4C64 12 40 26 8 48" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/>
+            <path d="M8 48L18 46.6M8 48L11.4 38.4" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/>
+          </svg>
+          <p class="proof__stamp">朱笔 · 第 3 次校样</p>
+          <p class="proof__note">中宫再收 2%，<br>提画略短。</p>
+          <p class="proof__by">— 陈, 2026.10.28</p>
+        </aside>
+      </div>
+
+      <dl class="spec">
+        <div class="spec__row"><dt>字样</dt><dd>合文宋 常规</dd></div>
+        <div class="spec__row"><dt>字面</dt><dd>92% · 中宫收紧</dd></div>
+        <div class="spec__row"><dt>字符集</dt><dd>GB 18030 · 中文简体</dd></div>
+        <div class="spec__row"><dt>版本</dt><dd>v3.2 · 2026</dd></div>
+      </dl>
+    </div>
+
+    <footer class="specimen__foot">
+      <span>上海 · 二〇二六</span>
+      <span>客户工作台</span>
+    </footer>
+  </section>
+
+  <section class="auth" aria-labelledby="auth-title">
+    <div class="auth__inner">
+      <h1 class="auth__title" id="auth-title">登录工作台</h1>
+      <p class="auth__lede">使用合文账号登录，继续校样与字库下载。</p>
+
+      <form class="form" id="signin" novalidate>
+        <div class="field" data-field="email">
+          <label class="field__label" for="email">邮箱地址</label>
+          <input class="field__input" id="email" name="email" type="email"
+                 inputmode="email" autocomplete="username" spellcheck="false"
+                 placeholder="name@studio.cn" aria-describedby="email-error">
+          <p class="field__error" id="email-error" hidden></p>
+        </div>
+
+        <div class="field" data-field="password">
+          <div class="field__head">
+            <label class="field__label" for="password">密码</label>
+            <a class="field__aside" href="#reset">忘记密码？</a>
+          </div>
+          <div class="field__control">
+            <input class="field__input" id="password" name="password" type="password"
+                   autocomplete="current-password" aria-describedby="password-error">
+            <button class="reveal" type="button" id="reveal"
+                    aria-pressed="false" aria-controls="password">显示</button>
+          </div>
+          <p class="field__error" id="password-error" hidden></p>
+        </div>
+
+        <label class="check">
+          <input class="check__input" type="checkbox" id="remember" name="remember">
+          <span class="check__label">保持登录 30 天</span>
+        </label>
+
+        <button class="btn btn--primary" type="submit" id="submit">登录</button>
+
+        <div class="form__status-row" id="status-row" hidden>
+          <p class="form__status" id="status" role="status" aria-live="polite"></p>
+          <button class="link-btn" type="button" id="reset-demo" hidden>重新演示</button>
+        </div>
+
+        <div class="rule" aria-hidden="true"><span>或</span></div>
+
+        <button class="btn btn--ghost" type="button" id="sso">使用企业 SSO 登录</button>
+      </form>
+
+      <footer class="auth__foot">
+        <p>还没有账号？<a href="#trial">申请试用</a></p>
+        <p class="auth__legal">登录即表示你同意<a href="#terms">服务条款</a>与<a href="#privacy">隐私政策</a>。</p>
+        <p class="auth__note">原型演示 · 不连接真实账号</p>
+      </footer>
+    </div>
+  </section>
+
+</main>
+<script src="app.js"></script>
+</body>
+</html>
