@@ -21,6 +21,7 @@
   --indigo-ink: #1e3772;
   --seal: #a6342a;
   --seal-soft: #f3e2df;
+  --seal-muted: #8f2c22;   /* 朱批里的次级文字：对纸底 6.6:1 */
 
   --radius: 2px;
   --measure: 380px;
@@ -234,7 +235,7 @@ a:hover { color: var(--indigo-ink); text-decoration-color: currentColor; }
   width: clamp(56px, 7vw, 84px);
   height: auto;
   margin: 0 0 8px 0;
-  opacity: .8;
+  color: var(--seal-muted);
 }
 
 .proof__stamp {
@@ -242,8 +243,7 @@ a:hover { color: var(--indigo-ink); text-decoration-color: currentColor; }
   font-size: 11px;
   line-height: 1.5;
   letter-spacing: .12em;
-  color: var(--seal);
-  opacity: .75;
+  color: var(--seal-muted);
 }
 
 .proof__note {
@@ -260,8 +260,7 @@ a:hover { color: var(--indigo-ink); text-decoration-color: currentColor; }
   font-size: 11px;
   line-height: 1.5;
   letter-spacing: .04em;
-  color: var(--seal);
-  opacity: .62;
+  color: var(--seal-muted);
 }
 
 /* 样张参数 */
