@@ -25,7 +25,7 @@ python3 -m http.server 8000
 | `styles.css` | 全部样式与设计令牌（颜色、字体、间距） |
 | `app.js` | 表单校验、密码可见性、模拟提交 |
 | `docs/DESIGN.md` | 设计说明：配色、字体、版式与取舍 |
-| `docs/screens/*.png` | 各状态与各分辨率截图 |
+| `docs/screens/*.png` | 改动前后对照、各状态与各分辨率截图 |
 
 ## 已实现
 
